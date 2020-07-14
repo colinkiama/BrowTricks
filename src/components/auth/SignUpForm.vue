@@ -66,6 +66,10 @@ export default {
     return {
       navigation: [
         {
+          step: 'billing-methods',
+          name: 'Billling Methods'
+        },
+        {
           step: 'business-info',
           name: 'Business Info'
         },
@@ -84,10 +88,6 @@ export default {
         {
           step: 'payment-methods',
           name: 'Payment Methods'
-        },
-        {
-          step: 'billing-methods',
-          name: 'Billling Methods'
         }
       ],
       errors: null

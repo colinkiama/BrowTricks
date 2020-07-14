@@ -3,7 +3,11 @@
     <div class="card bg-white border rounded-lg p-4">
       <h4 class="pb-4">Payment Method</h4>
       <div class="flex">
-        <img class="w-12 h-12 mr-4" src="https://image.shutterstock.com/image-photo/image-260nw-267937022.jpg" alt="">
+        <img
+          class="w-12 h-12 mr-4"
+          src="https://image.shutterstock.com/image-photo/image-260nw-267937022.jpg"
+          alt=""
+        />
         <div>
           <h4>Amex ****1234</h4>
           <h6>Expires 04/21</h6>
@@ -15,14 +19,33 @@
         <div>Edit</div>
       </div>
     </div>
-    <div class="my-8 border-dashed border-2 border-black border-opacity-disabled rounded-lg p-4 text-center uppercase">
+    <div
+      class="my-8 border-dashed border-2 border-black border-opacity-disabled rounded-lg p-4 text-center uppercase"
+    >
       Add Payment Method
     </div>
+    <BillingMethodsModal
+      :selectedBilling="
+        selectedIndex ? billingMethods[selectedIndex] : undefined
+      "
+      v-if="true"
+    />
   </div>
 </template>
 
 <script>
+import BillingMethodsModal from './BillingMethodsModal';
+
 export default {
-  name: 'BillingMethods'
-}
+  name: 'BillingMethods',
+  components: {
+    BillingMethodsModal
+  },
+  data() {
+    return {
+      selectedIndex: null,
+      billingMethods: []
+    };
+  }
+};
 </script>
