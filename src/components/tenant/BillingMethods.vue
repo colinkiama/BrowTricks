@@ -15,37 +15,79 @@
       </div>
       <hr class="my-6" />
       <div class="flex justify-end">
-        <div>Remove</div>
-        <div>Edit</div>
+        <Button
+          :isRipple="false"
+          class="text-on-secondary"
+          background="bg-transparent"
+          width="w-auto"
+          title="Edit"
+          @clicked="editBillingMethod(0)"
+        />
+        <Button
+          :isRipple="false"
+          class="text-error"
+          background="bg-transparent"
+          width="w-auto"
+          title="Remove"
+          @clicked="removeBillingMethod(0)"
+        />
       </div>
     </div>
-    <div
-      class="my-8 border-dashed border-2 border-black border-opacity-disabled rounded-lg p-4 text-center uppercase"
-    >
-      Add Payment Method
+    <div class="">
+      <Button
+        :isRipple="false"
+        class="text-on-surface text-opacity-medium my-8 border-dashed border-2 border-black border-opacity-disabled rounded-lg"
+        background="bg-transparent"
+        title="Add Payment Method"
+        @clicked="addNewBillingMethod"
+      />
     </div>
     <BillingMethodsModal
+      @closeModal="isModalActive = false"
+      @updateBillingMethod="updateBillingMethod"
       :selectedBilling="
         selectedIndex ? billingMethods[selectedIndex] : undefined
       "
-      v-if="true"
+      v-if="isModalActive"
     />
   </div>
 </template>
 
 <script>
 import BillingMethodsModal from './BillingMethodsModal';
+import Button from '@/components/Button.vue';
 
 export default {
   name: 'BillingMethods',
   components: {
-    BillingMethodsModal
+    BillingMethodsModal,
+    Button
   },
   data() {
     return {
       selectedIndex: null,
-      billingMethods: []
+      billingMethods: [],
+      isModalActive: false
     };
+  },
+  methods: {
+    removeBillingMethod(index) {
+      this.billingMethods.splice(index, 1);
+    },
+    editBillingMethod(index) {
+      this.selectedIndex = index;
+      this.openModal();
+    },
+    updateBillingMethod(payload) {
+      this.billingMethods.splice(this.selectedIndex, 1, payload);
+    },
+    addNewBillingMethod() {
+      this.selectedIndex = this.billingMethods.length;
+      this.openModal();
+    },
+    openModal() {
+      this.isModalActive = true;
+    }
   }
 };
 </script>

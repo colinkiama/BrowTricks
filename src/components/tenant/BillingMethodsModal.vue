@@ -211,7 +211,7 @@
                 </span>
               </material-input>
             </div>
-            <div class="my-4">
+            <div class="py-4">
               <Button
                 @clicked="savePaymentMethod"
                 class="tg-color-label-mobile rounded-full"
@@ -277,7 +277,7 @@ export default {
   },
   data() {
     return {
-      billingInfo: {
+      billingData: {
         cardHolder: '',
         cardNumber: '',
         expirationDate: '',
@@ -300,14 +300,16 @@ export default {
   },
   methods: {
     async savePaymentMethod() {
-      await this.$emit('update:selectedBilling', {});
+      await this.$emit('updateBillingMethod', {});
       this.$emit('closeModal');
     }
   },
   computed: {
-    selectedBillingMethod: {
+    billingInfo: {
       get() {
-        return this.selectedBilling ? { ...this.selectedBilling } : null;
+        return this.selectedBilling
+          ? { ...this.selectedBilling }
+          : { ...this.billingData };
       }
     }
   }
