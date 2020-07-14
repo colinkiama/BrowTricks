@@ -2,36 +2,46 @@
   <div class="px-6">
     <div class="card bg-white border rounded-lg p-4">
       <h4 class="pb-4">Payment Method</h4>
-      <div class="flex">
-        <img
-          class="w-12 h-12 mr-4"
-          src="https://image.shutterstock.com/image-photo/image-260nw-267937022.jpg"
-          alt=""
-        />
-        <div>
-          <h4>Amex ****1234</h4>
-          <h6>Expires 04/21</h6>
+      <div>
+        <div class="flex pb-2">
+          <img
+            class="w-12 h-12 mr-4"
+            src="https://image.shutterstock.com/image-photo/image-260nw-267937022.jpg"
+            alt=""
+          />
+          <div>
+            <h4>Amex ****1234</h4>
+            <h6>Expires 04/21</h6>
+          </div>
+        </div>
+        <hr class="my-4" />
+        <div class="flex justify-end">
+          <Button
+            :isRipple="false"
+            class="text-on-secondary"
+            background="bg-transparent"
+            width="w-auto"
+            title="Edit"
+            @clicked="editBillingMethod(0)"
+          />
+          <Button
+            :isRipple="false"
+            class="text-error"
+            background="bg-transparent"
+            width="w-auto"
+            title="Remove"
+            @clicked="removeBillingMethod(0)"
+          />
         </div>
       </div>
-      <hr class="my-6" />
-      <div class="flex justify-end">
-        <Button
-          :isRipple="false"
-          class="text-on-secondary"
-          background="bg-transparent"
-          width="w-auto"
-          title="Edit"
-          @clicked="editBillingMethod(0)"
-        />
-        <Button
-          :isRipple="false"
-          class="text-error"
-          background="bg-transparent"
-          width="w-auto"
-          title="Remove"
-          @clicked="removeBillingMethod(0)"
-        />
-      </div>
+      <hr class="my-4 -mx-4" />
+      <Button
+        :isRipple="false"
+        class="text-on-secondary py-2"
+        background="bg-transparent"
+        title="Change Payment Method"
+        @clicked="addNewBillingMethod"
+      />
     </div>
     <div class="">
       <Button
