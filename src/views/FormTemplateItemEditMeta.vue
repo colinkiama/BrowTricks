@@ -13,7 +13,7 @@
       v-model="$v.name.$model"
       label="Name"
       placeholder="e.g. PMU Agreement Form"
-      labelBackground="bg-background has-noise"
+      labelBackground="bg-background"
       :error="$v.name.$error"
     >
       <p v-if="!$v.name.required">

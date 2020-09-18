@@ -9,7 +9,7 @@
           v-model="$v.description.$model"
           :error="$v.description.$error"
           label="Description"
-          labelBackground="has-noise bg-background"
+          labelBackground="bg-background"
           rows="4"
         >
           <p v-if="!$v.description.required">
@@ -27,9 +27,9 @@
             <template #icon>
               <IconCheck
                 v-if="selectedClientId"
-                class="fill-current text-primary w-3 h-3"
+                class="fill-current text-on-primary w-3 h-3"
               />
-              <IconUser v-else class="fill-current text-primary w-3 h-3" />
+              <IconUser v-else class="fill-current text-on-primary w-3 h-3" />
             </template>
             Select Client
           </BaseChip>

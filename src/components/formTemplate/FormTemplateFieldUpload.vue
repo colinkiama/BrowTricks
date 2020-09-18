@@ -20,7 +20,7 @@
           class="mb-4"
           placeholder="e.g. Check any that apply:"
           label="Question"
-          labelBackground="bg-background has-noise"
+          labelBackground="bg-background"
           rows="7"
           :error="$v.model.value.$error"
         >

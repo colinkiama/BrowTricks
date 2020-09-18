@@ -131,13 +131,7 @@ export default {
 }
 .theme-btnprimary {
   @apply shadow-2dp;
-  background: linear-gradient(
-      308deg,
-      rgba(237, 187, 174, 0.14) 0%,
-      rgba(255, 255, 255, 0.42) 49.37%,
-      rgba(255, 255, 255, 0.42) 98.01%
-    ),
-    #edaeae;
+  background: #D4E2DA;
 }
 .theme-btnsecondary {
   @apply shadow-2dp bg-secondary;

@@ -1,18 +1,18 @@
 const colors = {
   inherit: 'inherit',
-  primary: '#141414',
-  secondary: '#B5E3D8',
-  background: '#FBF5F4',
+  primary: '#FFFFFF',
+  secondary: '#E9CFC4',
+  background: '#FFFFFF',
   surface: '#FFFFFF',
   error: '#E74323',
   divider: '#000000',
-  'on-primary': '#FFFFFF',
-  'on-secondary': '#000000',
-  'on-surface': '#000000',
-  'on-background': '#000000',
+  'on-primary': '#071108',
+  'on-secondary': '#071108',
+  'on-surface': '#071108',
+  'on-background': '#071108',
   'on-error': '#FFFFFF',
-  'on-background-image': '#FFFFFF',
-  brand1: '#EDAEAE'
+  'on-background-image': '#071108',
+  brand1: '#E9CFC4'
 };
 
 module.exports = colors;

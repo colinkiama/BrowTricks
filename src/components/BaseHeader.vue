@@ -1,7 +1,7 @@
 <template>
   <div
     class="h-14 w-full px-2 py-5 sticky top-0 z-40 flex justify-between items-center"
-    :class="[background, shadow, hasNoise ? 'has-noise' : '']"
+    :class="[background, shadow]"
   >
     <a
       v-if="$slots.icon"
@@ -29,10 +29,6 @@ export default {
       type: String,
       default: 'dark'
     },
-    hasNoise: {
-      type: Boolean,
-      default: false
-    }
   },
   computed: {
     background() {

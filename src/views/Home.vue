@@ -5,7 +5,6 @@
       <BaseHeader
         @iconClicked="isDrawerOpenUpdate(true)"
         theme="light"
-        hasNoise="has-noise"
       >
         <template #icon>
           <IconMenu class="h-6 w-6 fill-current" />
